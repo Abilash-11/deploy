@@ -26,9 +26,9 @@ print(os.path.join(BASE_DIR, 'static'))
 SECRET_KEY = 'django-insecure-4q_7j14ev*@-66imo54-g8*-rk!kj7k03t9=6d1%gnh-r&dk4m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["hotelmng-8a02e12bc45b.herokuapp.com"]
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,6 +127,9 @@ STATICFILES_DIRS = [
     
 ]
 STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
